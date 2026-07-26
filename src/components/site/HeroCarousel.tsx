@@ -13,10 +13,10 @@ const getNearestTarget = (current: number, index: number) => {
     Math.abs(t - current) < Math.abs(b - current) ? t : b);
 };
 
-function Card({ slide, index, posMV, gap, onSelect }: {
+function Card({ slide, index, posMV, gap, onSelect, isActive }: {
   slide: (typeof slides)[number]; index: number;
   posMV: ReturnType<typeof useMotionValue<number>>; gap: number;
-  onSelect: (i: number) => void;
+  onSelect: (i: number) => void; isActive: boolean;
 }) {
   const rawOffset = useTransform(posMV, (p) => {
     let d = index - p;
@@ -31,31 +31,52 @@ function Card({ slide, index, posMV, gap, onSelect }: {
   const zIndex = useTransform(rawOffset, (d) => Math.round(100 - Math.abs(d) * 10));
   const blur = useTransform(rawOffset, (d) => `blur(${Math.min(2.5, Math.max(0, Math.abs(d) - 1.2) * 0.9)}px)`);
   const centerT = useTransform(rawOffset, (d) => Math.max(0, 1 - Math.abs(d) * 1.6));
+  
+  // Enhanced shadow to make the active card pop more dramatically
   const shadow = useTransform(centerT, (t) =>
-    `0 0 0 1px oklch(0.86 0.13 88 / ${0.45 * t}), 0 0 34px -3px oklch(0.86 0.13 88 / ${0.62 * t})`);
+    `0 0 0 1px oklch(0.86 0.13 88 / ${0.5 * t}), 0 20px 50px -12px oklch(0.86 0.13 88 / ${0.5 * t}), 0 30px 60px -20px black/70`);
 
   return (
     <motion.button
       type="button"
       onClick={(e) => { onSelect(index); celebrate(e.clientX, e.clientY); }}
-      className="absolute left-1/2 top-1/2 rounded-2xl outline-none"
+      className="absolute left-1/2 top-1/2 rounded-[1.75rem] outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.86_0.13_88)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       style={{ x, y: yShift, rotate, scale, opacity, zIndex, filter: blur,
         translateX: "-50%", translateY: "-50%", willChange: "transform, filter, opacity" }}
     >
-      <div className="relative h-[68vw] max-h-[360px] min-h-[265px] w-[68vw] max-w-[300px] sm:h-[400px] sm:w-[310px] sm:max-w-[330px] md:h-[460px] md:w-[350px] md:max-w-[350px]">
-        <motion.div aria-hidden className="pointer-events-none absolute -inset-[10px] rounded-[22px]"
+      <div className="relative h-[68vw] max-h-[360px] min-h-[265px] w-[68vw] max-w-[300px] sm:h-[420px] sm:w-[320px] sm:max-w-[330px] md:h-[480px] md:w-[360px] md:max-w-[360px]">
+        {/* Glow Background */}
+        <motion.div aria-hidden className="pointer-events-none absolute -inset-[12px] rounded-[2rem]"
           style={{ opacity: centerT,
-            background: "radial-gradient(60% 55% at 50% 50%, oklch(0.86 0.13 88 / 0.58), transparent 72%)",
-            filter: "blur(18px)" }} />
-        <motion.div className="relative h-full w-full overflow-hidden rounded-2xl" style={{ boxShadow: shadow }}>
-          <img src={slide.img} alt={slide.title}
-            className="h-full w-full select-none object-cover" draggable={false}
-            loading={index === 0 ? "eager" : "lazy"} decoding="async" />
-          <LogoWatermark size={26} />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 p-5 text-center">
-            <div className="font-display text-lg font-bold leading-tight text-white sm:text-xl">{slide.title}</div>
-            <div className="mt-2 text-[10px] font-bold uppercase tracking-[0.22em] text-[oklch(0.86_0.13_88)] sm:text-[11px] sm:tracking-[0.28em]">
+            background: "radial-gradient(60% 55% at 50% 50%, oklch(0.86 0.13 88 / 0.6), transparent 70%)",
+            filter: "blur(20px)" }} />
+        
+        {/* Card Container */}
+        <motion.div className="group relative h-full w-full overflow-hidden rounded-[1.75rem] border border-white/10" style={{ boxShadow: shadow }}>
+          <img 
+            src={slide.img} 
+            alt={slide.title}
+            className={`h-full w-full select-none object-cover transition-transform duration-[1.2s] ease-out ${isActive ? 'scale-100' : 'scale-105'}`}
+            draggable={false}
+            loading={index === 0 ? "eager" : "lazy"} 
+            decoding="async" 
+          />
+          
+          {/* Inner Border Ring for premium depth */}
+          <div className="pointer-events-none absolute inset-0 rounded-[1.75rem] ring-1 ring-inset ring-white/10" />
+          
+          <LogoWatermark size={28} />
+          
+          {/* Gradient Overlay */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/40 to-transparent" />
+          
+          {/* Text Content */}
+          <div className="absolute inset-x-0 bottom-0 p-6 text-center sm:p-8">
+            <div className="font-display text-xl font-black uppercase tracking-tight text-white drop-shadow-lg sm:text-2xl">
+              {slide.title}
+            </div>
+            <div className="mt-2 flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[oklch(0.86_0.13_88)] sm:text-[11px]">
+              <span className="h-1 w-1 rounded-full bg-[oklch(0.86_0.13_88)]" />
               {slide.tag}
             </div>
           </div>
@@ -109,16 +130,25 @@ export function HeroCarousel() {
     if (idx !== activeRef.current) { activeRef.current = idx; setActive(idx); }
   });
 
-  const onSelect = (i: number) => {
+  const onSelect = (i: number, triggerConfetti: boolean = true) => {
     if (draggingRef.current || i === active) return;
     autoControlsRef.current?.stop();
     animate(pos, getNearestTarget(pos.get(), i), { type: "spring", damping: 34, stiffness: 120, mass: 0.7 });
     queueAutoRef.current();
+    
+    // Trigger confetti only if clicked directly on a card
+    if (triggerConfetti) {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      celebrate(centerX, centerY);
+    }
   };
 
   return (
-    <div className="relative h-[58vh] min-h-[410px] w-full select-none sm:h-[68vh] sm:min-h-[520px]">
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-[radial-gradient(50%_60%_at_50%_100%,oklch(0.86_0.13_88_/_0.2),transparent_70%)]" />
+    <div className="relative h-[60vh] min-h-[420px] w-full select-none sm:h-[72vh] sm:min-h-[540px]">
+      {/* Ambient Background Glow */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-[radial-gradient(50%_60%_at_50%_100%,oklch(0.86_0.13_88_/_0.15),transparent_70%)]" />
+      
       <motion.div
         className="absolute inset-0 touch-pan-y cursor-grab active:cursor-grabbing"
         drag="x" dragConstraints={{ left: 0, right: 0 }} dragElastic={0.08} dragMomentum={false}
@@ -148,14 +178,31 @@ export function HeroCarousel() {
         }}
       >
         {slides.map((s, i) => (
-          <Card key={i} slide={s} index={i} posMV={smooth} gap={gap} onSelect={onSelect} />
+          <Card 
+            key={i} 
+            slide={s} 
+            index={i} 
+            posMV={smooth} 
+            gap={gap} 
+            onSelect={(idx) => onSelect(idx, true)} 
+            isActive={i === active}
+          />
         ))}
       </motion.div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-4 z-30 flex justify-center gap-1.5">
+
+      {/* Interactive Progress Dots */}
+      <div className="absolute inset-x-0 bottom-8 z-30 flex justify-center gap-2">
         {slides.map((_, i) => (
-          <span key={i} className={`h-[3px] rounded-full transition-all duration-700 ${
-            i === active ? "w-10 bg-[oklch(0.86_0.13_88)]" : "w-3 bg-white/20"
-          }`} />
+          <button
+            key={i}
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => onSelect(i, false)}
+            className={`h-2 rounded-full transition-all duration-500 ease-out hover:opacity-80 ${
+              i === active 
+                ? "w-10 bg-[oklch(0.86_0.13_88)] shadow-[0_0_10px_oklch(0.86_0.13_88)]" 
+                : "w-2 bg-white/25 hover:bg-white/40"
+            }`}
+          />
         ))}
       </div>
     </div>

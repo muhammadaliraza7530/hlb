@@ -18,12 +18,18 @@ export const WA_HREF = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
 )}`;
 
 export const PROJECTS = [
-  { img: "/hlb/dayany.webp",      title: "DAYANY HEIGHTS",     tag: "Complete Project · High-Rise" },
-  { img: "/hlb/safron.webp",      title: "SAFRON HEIGHTS",     tag: "Complete Project · Residential" },
-  { img: "/hlb/royal.webp",       title: "ROYAL HOMES",        tag: "Complete Project · Residential" },
-  { img: "/hlb/royal-elite.webp", title: "ROYAL ELITE HOMES",  tag: "Complete Project · Luxury" },
-  { img: "/hlb/mahran.webp",      title: "MAHRAN TWIN TOWERS", tag: "Complete Project · Towers" },
-  { img: "/hlb/burj.webp",        title: "BURJ AL-BARAKA",     tag: "Complete Project · Commercial" },
+  { img: "/hlb/dayany.webp",      title: "The Court Heights",           tag: "Complete Project · High-Rise",      alt: "The Court Heights building exterior" },
+  { img: "/hlb/mahran.webp",      title: "The Court Twin Tower",        tag: "Complete Project · Twin Towers",   alt: "The Court Twin Tower buildings" },
+  { img: "/hlb/royal-elite.webp", title: "The Court Regency",          tag: "Complete Project · Luxury",       alt: "The Court Regency residential facade" },
+  { img: "/hlb/royal.webp",       title: "The Court Industrial Park",    tag: "Complete Project · Industrial",   alt: "The Court Industrial Park facility" },
+  { img: "/hlb/safron.webp",      title: "AT Tower",                    tag: "Complete Project · Tower",        alt: "AT Tower high-rise building" },
+  { img: "/hlb/burj.webp",        title: "Saima Burj Al Baraka",        tag: "Complete Project · Commercial",   alt: "Saima Burj Al Baraka exterior" },
+  { img: "/hlb/dayany.webp",      title: "DAYANY HEIGHTS",             tag: "Complete Project · High-Rise",      alt: "Dayany Heights building exterior" },
+  { img: "/hlb/safron.webp",      title: "SAFRON HEIGHTS",             tag: "Complete Project · Residential",    alt: "Safron Heights building exterior" },
+  { img: "/hlb/royal.webp",       title: "ROYAL HOMES",                tag: "Complete Project · Residential",    alt: "Royal Homes residential complex" },
+  { img: "/hlb/royal-elite.webp", title: "ROYAL ELITE HOMES",         tag: "Complete Project · Luxury",         alt: "Royal Elite Homes residential facade" },
+  { img: "/hlb/mahran.webp",      title: "MAHRAN TWIN TOWERS",         tag: "Complete Project · Towers",         alt: "Mahran Twin Towers skyline" },
+  { img: "/hlb/burj.webp",        title: "BURJ AL-BARAKA",             tag: "Complete Project · Commercial",    alt: "Burj Al-Baraka commercial tower" },
 ];
 
 export const HERO_BG_IMAGES = [
