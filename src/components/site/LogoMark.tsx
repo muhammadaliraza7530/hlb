@@ -3,7 +3,7 @@ import { HLB } from "@/data/hlb";
 export function LogoMark({ size = 44, className = "" }: { size?: number; className?: string }) {
   return (
     <span
-      className={`relative inline-flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[oklch(0.20_0.02_265)] to-[oklch(0.10_0.01_265)] p-[5px] shadow-[0_8px_20px_-6px_rgba(0,0,0,0.6)] ring-1 ring-inset ring-white/10 h-13 w-13 sm:h-[var(--logo-size)] sm:w-[var(--logo-size)] ${className}`}
+      className={`relative inline-flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-[oklch(0.20_0.02_265)] to-[oklch(0.10_0.01_265)] p-[5px] shadow-[0_8px_20px_-6px_rgba(0,0,0,0.6)] ring-1 ring-inset ring-white/10 h-14 w-14 sm:h-[var(--logo-size)] sm:w-[var(--logo-size)] ${className}`}
       style={{ "--logo-size": `${size}px` } as React.CSSProperties}
     >
       {/* Subtle top-down light glint */}
