@@ -1,7 +1,7 @@
 import { animate, motion, useMotionValue, useMotionValueEvent, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { celebrate } from "@/lib/confetti";
-import { LogoWatermark } from "./LogoMark";
+import { LogoWatermark } from "./LogoWatermark";
 import { PROJECTS } from "@/data/hlb";
 
 const slides = PROJECTS;

@@ -1,7 +1,7 @@
 import { motion, useMotionValue, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { celebrate } from "@/lib/confetti";
-import { LogoWatermark } from "./LogoMark";
+import { LogoWatermark } from "./LogoWatermark";
 
 export type Project = { img: string; title: string; tag: string; alt?: string };
 

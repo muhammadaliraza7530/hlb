@@ -186,20 +186,16 @@ function Story() {
           </Reveal>
           <Reveal delay={0.15} className="relative">
             <motion.div style={{ y }} className="corner-frame relative overflow-hidden rounded-3xl border border-[oklch(0.78_0.15_85)]/40 bg-[oklch(0.19_0.04_265)]">
-              <div className="grid gap-0 sm:grid-cols-[minmax(0,240px)_1fr]">
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[oklch(0.24_0.04_265)] sm:aspect-auto sm:h-full">
-                  {/* CEO photo placeholder — replace src with the real photo when provided */}
+<div className="flex flex-col sm:grid sm:grid-cols-[minmax(0,240px)_1fr]">
+  <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-[oklch(0.24_0.04_265)] sm:aspect-auto sm:h-full">
                   <img
-                    src="/hlb/ceo.webp"
+                    src="/hlb/ceo-portrait.jpg"
                     alt="Tanveer Ishtiaq Khan — Founder & CEO"
                     loading="lazy"
                     decoding="async"
                     onError={(e) => { (e.currentTarget as HTMLImageElement).style.visibility = "hidden"; }}
-                    className="h-full w-full object-cover"
+                   className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[oklch(0.22_0.04_265)] to-[oklch(0.14_0.03_265)] text-center text-[10px] font-bold uppercase tracking-[0.3em] text-white/25">
-                    <span className="px-4">CEO Photo</span>
-                  </div>
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
                 </div>
                 <div className="p-6 sm:p-8">

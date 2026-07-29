@@ -42,7 +42,7 @@ function Page() {
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-5 md:gap-16">
           <Reveal className="md:col-span-2">
             <div className="overflow-hidden rounded-3xl border border-[oklch(0.78_0.15_85)]/40 bg-white/[0.02] p-8">
-              <img src="/hlb/founder.webp" alt="Tanveer Ishtiaq Khan — Founder & CEO"
+              <img src="/hlb/ceo-portrait.jpg" alt="Tanveer Ishtiaq Khan — Founder & CEO"
                 className="mx-auto h-auto w-full max-w-[300px] object-contain" />
               <div className="mt-6 text-center">
                 <div className="text-[10px] uppercase tracking-[0.4em] text-[oklch(0.86_0.13_88)]">Founder &amp; CEO</div>
