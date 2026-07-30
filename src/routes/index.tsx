@@ -97,7 +97,7 @@ function Hero() {
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
             className="mt-3 text-center font-display font-semibold leading-[0.95] tracking-[0.22em] text-white/85 text-[clamp(0.9rem,3.6vw,2.4rem)]"
           >
-            <span className="mr-2 text-[oklch(0.72_0.12_245)]">&amp;</span>Constructions
+            <span className="mr-2 text-[oklch(0.72_0.12_245)]">&amp;</span>Constructors
           </motion.div>
         </div>
         <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-[oklch(0.72_0.12_245)] to-transparent" />
@@ -358,7 +358,7 @@ function CTA() {
             Have a site,<br /><span className="gold-text font-black">a plan, a vision?</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-sm text-white/60 sm:text-base">
-            {HLB.full} — {HLB.category} registered. Reach out and let's discuss your next project.
+            {HLB.full} — {HLB.category} Reach out and let's     discuss your next project.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href={WA_HREF} target="_blank" rel="noopener noreferrer"

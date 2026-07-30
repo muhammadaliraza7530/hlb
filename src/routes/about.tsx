@@ -73,7 +73,7 @@ function Page() {
               sites across Pakistan.
             </p>
             <p className="mt-6 font-display text-lg text-[oklch(0.72_0.12_245)]">We believe in our men.</p>
-            <p className="mt-2 text-sm text-white/50">— Yours sincerely, Tanveer Ishtiaq Khan · Founder &amp; CEO</p>
+            {/* <p className="mt-2 text-sm text-white/50">— Yours sincerely, Tanveer Ishtiaq Khan · Founder &amp; CEO</p> */}
           </Reveal>
         </div>
       </section>

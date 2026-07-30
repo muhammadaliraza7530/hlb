@@ -3,9 +3,9 @@ export const HLB = {
   full: "High Land Builders & Constructors",
   founded: 1985,
   founder: "Tanveer Ishtiaq Khan",
-  category: "PEC C-4",
+  category: "",
   phone1: "0326-0892858",
-  phone2: "0333-2108752",
+  phone2: "", 
   email: "projects@hlbpk.com",
   address:
     "Office # G-13, Ground Floor, The Court Residency, Plot # 67, Muslimabad Cooperative Housing Society, Dadabhoy Nauroji Road, Karachi",
@@ -21,15 +21,15 @@ export const PROJECTS = [
   { img: "/hlb/dayany.webp",      title: "The Court Heights",           tag: "Complete Project · High-Rise",      alt: "The Court Heights building exterior" },
   { img: "/hlb/mahran.webp",      title: "The Court Twin Tower",        tag: "Complete Project · Twin Towers",   alt: "The Court Twin Tower buildings" },
   { img: "/hlb/royal-elite.webp", title: "The Court Regency",          tag: "Complete Project · Luxury",       alt: "The Court Regency residential facade" },
-  { img: "/hlb/royal.webp",       title: "The Court Industrial Park",    tag: "Complete Project · Industrial",   alt: "The Court Industrial Park facility" },
-  { img: "/hlb/safron.webp",      title: "AT Tower",                    tag: "Complete Project · Tower",        alt: "AT Tower high-rise building" },
-  { img: "/hlb/burj.webp",        title: "Saima Burj Al Baraka",        tag: "Complete Project · Commercial",   alt: "Saima Burj Al Baraka exterior" },
-  { img: "/hlb/dayany.webp",      title: "DAYANY HEIGHTS",             tag: "Complete Project · High-Rise",      alt: "Dayany Heights building exterior" },
+  { img: "/hlb/royal.webp",       title: "Jinnah Hospital  Gynae Ward",    tag: "Complete Project · Industrial",   alt: "The Court Industrial Park facility" },
+  { img: "/hlb/safron.webp",      title: "ROYAL ELITE HOMES",                    tag: "Complete Project · Tower",        alt: "AT Tower high-rise building" },
+  { img: "/hlb/burj.webp",        title: "SAFRON HEIGHTS",        tag: "Complete Project · Commercial",   alt: "Saima Burj Al Baraka exterior" },
+  { img: "/hlb/dayany.webp",      title: "DAYANY HEIGHTS",             tag: "Complete Project · High-Rise",      alt: "Cant View Lodges" },
   { img: "/hlb/safron.webp",      title: "SAFRON HEIGHTS",             tag: "Complete Project · Residential",    alt: "Safron Heights building exterior" },
   { img: "/hlb/royal.webp",       title: "ROYAL HOMES",                tag: "Complete Project · Residential",    alt: "Royal Homes residential complex" },
   { img: "/hlb/royal-elite.webp", title: "ROYAL ELITE HOMES",         tag: "Complete Project · Luxury",         alt: "Royal Elite Homes residential facade" },
   { img: "/hlb/mahran.webp",      title: "MAHRAN TWIN TOWERS",         tag: "Complete Project · Towers",         alt: "Mahran Twin Towers skyline" },
-  { img: "/hlb/burj.webp",        title: "BURJ AL-BARAKA",             tag: "Complete Project · Commercial",    alt: "Burj Al-Baraka commercial tower" },
+  { img: "/hlb/burj.webp",        title: "BURJ AL-BARAKA",             tag: "Complete Project · Commercial",    alt: "Burj Al-Baraka commercial tower" },    
 ];
 
 export const HERO_BG_IMAGES = [
@@ -48,7 +48,7 @@ export const SERVICES = [
     title: "Civil Works",
     icon: HardHat,
     intro:
-      "HighLand Builders & Constructors is a dynamic, progressive organization, registered with the Pakistan Engineering Council as (C-4) Category.",
+      "HighLand Builders & Constructors is a dynamic, progressive organization, registered with the Pakistan Engineering Council",
     highlights: [
       "Structural & foundation works",
       "High-rise residential & commercial",
