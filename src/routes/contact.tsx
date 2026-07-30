@@ -9,9 +9,9 @@ import { celebrate } from "@/lib/confetti";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact HLB Constructions — Karachi, Pakistan" },
-      { name: "description", content: "Contact HLB Constructions (High Land Builders & Constructors) — Karachi office, phone, email and enquiry form." },
-      { property: "og:title", content: "Contact HLB Constructions" },
+      { title: "Contact HLB Constructors — Karachi, Pakistan" },
+      { name: "description", content: "Contact HLB Constructors (High Land Builders & Constructors) — Karachi office, phone, email and enquiry form." },
+      { property: "og:title", content: "Contact HLB Constructors" },
       { property: "og:description", content: "Let's start a project. Office in Karachi — call, email or WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -84,8 +84,8 @@ function Page() {
                   <Phone className="mt-1 h-5 w-5 text-[oklch(0.86_0.13_88)]" />
                   <div>
                     <div className="text-[10px] uppercase tracking-[0.3em] text-[oklch(0.86_0.13_88)]">Our Phone</div>
-                    <a href={`tel:${HLB.phone1}`} className="mt-1 block text-sm text-white/70 hover:text-[oklch(0.86_0.13_88)]">{HLB.phone1}</a>
-                    <a href={`tel:${HLB.phone2}`} className="block text-sm text-white/70 hover:text-[oklch(0.86_0.13_88)]">{HLB.phone2}</a>
+                    <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm text-white/70 hover:text-[oklch(0.86_0.13_88)]">{HLB.phone1}</a>
+                    <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="block text-sm text-white/70 hover:text-[oklch(0.86_0.13_88)]">{HLB.phone2}</a>
                   </div>
                 </div>
                 <a href={WA_HREF} target="_blank" rel="noopener noreferrer"

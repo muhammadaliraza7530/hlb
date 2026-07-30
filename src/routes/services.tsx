@@ -6,9 +6,9 @@ import { SERVICES } from "@/data/hlb";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Civil Works, Turnkey & Construction Management | HLB Constructions" },
-      { name: "description", content: "Civil Works (PEC C-4), Turnkey Project Execution and Construction Management by HLB Constructions — end-to-end delivery across Pakistan." },
-      { property: "og:title", content: "Services — HLB Constructions" },
+      { title: "Services — Civil Works, Turnkey & Construction Management | HLB Constructors" },
+      { name: "description", content: "Civil Works (PEC C-4), Turnkey Project Execution and Construction Management by HLB Constructors — end-to-end delivery across Pakistan." },
+      { property: "og:title", content: "Services — HLB Constructors" },
       { property: "og:description", content: "What we can offer — civil works, turnkey execution and construction management under one roof." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

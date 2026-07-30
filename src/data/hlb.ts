@@ -1,5 +1,5 @@
 export const HLB = {
-  brand: "HLB Constructions",
+  brand: "HLB Constructors",
   full: "High Land Builders & Constructors",
   founded: 1985,
   founder: "Tanveer Ishtiaq Khan",
@@ -14,7 +14,7 @@ export const HLB = {
 
 export const WA_NUMBER = "923028288752";
 export const WA_HREF = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
-  "Hi HLB Constructions, I'd like to know more about your services."
+  "Hi HLB Constructors, I'd like to know more about your services."
 )}`;
 
 export const PROJECTS = [
@@ -52,7 +52,7 @@ export const SERVICES = [
     highlights: [
       "Structural & foundation works",
       "High-rise residential & commercial",
-      "PEC (C-4) registered contractor",
+      "PEC registered contractor",
       "Full-scale civil execution",
     ],
   },

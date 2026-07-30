@@ -7,9 +7,9 @@ import { HLB, PHILOSOPHY } from "@/data/hlb";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About HLB Constructions — Since 1985 | High Land Builders & Constructors" },
-      { name: "description", content: "About HLB Constructions — founded 1985 by Tanveer Ishtiaq Khan. 40+ years of civil works, high-rise and construction management across Pakistan." },
-      { property: "og:title", content: "About HLB Constructions — Since 1985" },
+      { title: "About HLB Constructors — Since 1985 | High Land Builders & Constructors" },
+      { name: "description", content: "About HLB Constructors — founded 1985 by Tanveer Ishtiaq Khan. 40+ years of civil works, high-rise and construction management across Pakistan." },
+      { property: "og:title", content: "About HLB Constructors — Since 1985" },
       { property: "og:description", content: "A message from Founder & CEO Tanveer Ishtiaq Khan and the story of High Land Builders & Constructors." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

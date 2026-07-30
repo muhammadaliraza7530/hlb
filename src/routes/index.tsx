@@ -13,9 +13,9 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "HLB Constructions — High-Rise, Turnkey & Construction Management in Pakistan" },
-      { name: "description", content: "HLB Constructions (High Land Builders & Constructors) — since 1985. Civil works, turnkey execution and construction management for residential, commercial & government projects across Pakistan." },
-      { property: "og:title", content: "HLB Constructions — Design · Build · Deliver" },
+      { title: "HLB Constructors — High-Rise, Turnkey & Construction Management in Pakistan" },
+      { name: "description", content: "HLB Constructors (High Land Builders & Constructors) — since 1985. Civil works, turnkey execution and construction management for residential, commercial & government projects across Pakistan." },
+      { property: "og:title", content: "HLB Constructors — Design · Build · Deliver" },
       { property: "og:description", content: "40+ years building Pakistan — Dayany Heights, Safron Heights, Royal Homes, Mahran Twin Towers, Burj Al-Baraka and more." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -80,7 +80,7 @@ function Hero() {
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
           className="mb-5 text-center text-[10px] font-bold uppercase text-[oklch(0.86_0.13_88)]/90 sm:mb-6 sm:text-xs"
         >
-          — Welcome to HLB Constructions —
+          — Welcome to HLB Constructors —
         </motion.p>
         <div className="relative overflow-hidden py-1">
           <motion.h1

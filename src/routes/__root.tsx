@@ -77,8 +77,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "HLB Constructions — High Land Builders & Constructors" },
-      { name: "description", content: "HLB Constructions (High Land Builders & Constructors) — 40+ years of civil works, turnkey execution and construction management across Pakistan. PEC C-4 registered." },
+      { title: "HLB Constructors — High Land Builders & Constructors" },
+      { name: "description", content: "HLB Constructors (High Land Builders & Constructors) — 40+ years of civil works, turnkey execution and construction management across Pakistan. PEC C-4 registered." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

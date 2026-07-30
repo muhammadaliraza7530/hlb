@@ -7,9 +7,9 @@ import { celebrate } from "@/lib/confetti";
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects — Dayany Heights, Safron Heights, Royal Homes | HLB Constructions" },
-      { name: "description", content: "Selected completed projects by HLB Constructions — Dayany Heights, Safron Heights, Royal Homes, Royal Elite Homes, Mahran Twin Towers, Burj Al-Baraka." },
-      { property: "og:title", content: "Projects — HLB Constructions" },
+      { title: "Projects — Dayany Heights, Safron Heights, Royal Homes | HLB Constructors" },
+      { name: "description", content: "Selected completed projects by HLB Constructors — Dayany Heights, Safron Heights, Royal Homes, Royal Elite Homes, Mahran Twin Towers, Burj Al-Baraka." },
+      { property: "og:title", content: "Projects — HLB Constructors" },
       { property: "og:description", content: "Selected residential, commercial and high-rise projects completed by High Land Builders & Constructors." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
