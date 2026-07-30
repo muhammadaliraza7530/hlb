@@ -8,7 +8,7 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-white/[0.03] border-white/10 text-white/80 [&>svg]:text-[oklch(0.86_0.13_88)]",
+        default: "bg-white/[0.03] border-white/10 text-white/80 [&>svg]:text-[oklch(0.72_0.12_245)]",
         destructive:
           "bg-red-500/[0.07] border-red-500/20 text-red-300 [&>svg]:text-red-400",
       },

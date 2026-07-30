@@ -34,13 +34,13 @@ const AlertDialogContent = React.forwardRef<
     <AlertDialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-5 overflow-hidden border border-white/10 bg-[oklch(0.15_0.03_265)]/95 p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] backdrop-blur-2xl duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 rounded-2xl ring-1 ring-inset ring-white/5 sm:rounded-[1.5rem]",
+        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-5 overflow-hidden border border-white/10 bg-[oklch(0.98_0.005_250)]/95 p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)] backdrop-blur-2xl duration-300 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 rounded-2xl ring-1 ring-inset ring-white/5 sm:rounded-[1.5rem]",
         className,
       )}
       {...props}
     >
       {/* Decorative top glint */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.78_0.15_85)]/50 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[oklch(0.58_0.14_248)]/50 to-transparent" />
       {children}
     </AlertDialogPrimitive.Content>
   </AlertDialogPortal>
@@ -92,7 +92,7 @@ const AlertDialogAction = React.forwardRef<
     ref={ref} 
     className={cn(
       buttonVariants(), 
-      "bg-[oklch(0.78_0.15_85)] text-[oklch(0.15_0.03_265)] shadow-[0_8px_20px_-8px_oklch(0.78_0.15_85)] hover:bg-[oklch(0.86_0.13_88)] hover:shadow-[0_10px_25px_-8px_oklch(0.78_0.15_85)]",
+      "bg-[oklch(0.58_0.14_248)] text-[oklch(0.98_0.005_250)] shadow-[0_8px_20px_-8px_oklch(0.58_0.14_248)] hover:bg-[oklch(0.72_0.12_245)] hover:shadow-[0_10px_25px_-8px_oklch(0.58_0.14_248)]",
       className
     )} 
     {...props} 

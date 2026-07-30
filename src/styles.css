@@ -28,20 +28,21 @@
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.14 0.03 265);
-  --foreground: oklch(0.98 0.01 90);
-  --card: oklch(0.19 0.04 265);
-  --card-foreground: oklch(0.97 0.01 90);
-  --primary: oklch(0.78 0.15 85);
-  --primary-foreground: oklch(0.15 0.03 265);
-  --muted: oklch(0.24 0.04 265);
-  --muted-foreground: oklch(0.75 0.03 90);
-  --accent: oklch(0.82 0.16 85);
-  --accent-foreground: oklch(0.15 0.03 265);
-  --border: oklch(0.3 0.05 265);
-  --gold: oklch(0.78 0.15 85);
-  --gold-soft: oklch(0.86 0.13 88);
-  --gold-deep: oklch(0.62 0.16 78);
+  /* Palette derived from the HLB logo: deep navy ink + construction blue */
+  --background: oklch(0.16 0.03 255);
+  --foreground: oklch(0.98 0.005 250);
+  --card: oklch(0.21 0.035 255);
+  --card-foreground: oklch(0.97 0.005 250);
+  --primary: oklch(0.58 0.14 248);
+  --primary-foreground: oklch(0.98 0.005 250);
+  --muted: oklch(0.26 0.035 255);
+  --muted-foreground: oklch(0.76 0.02 250);
+  --accent: oklch(0.65 0.14 246);
+  --accent-foreground: oklch(0.15 0.03 255);
+  --border: oklch(0.32 0.045 255);
+  --gold: oklch(0.58 0.14 248);
+  --gold-soft: oklch(0.72 0.12 245);
+  --gold-deep: oklch(0.45 0.13 252);
 }
 
 @layer base {
@@ -97,7 +98,7 @@
     100deg,
     var(--gold-soft) 0%,
     var(--gold-soft) 35%,
-    oklch(0.95 0.06 90) 50%,
+    oklch(0.94 0.05 245) 50%,
     var(--gold-soft) 65%,
     var(--gold-soft) 100%
   );
@@ -106,7 +107,7 @@
   background-clip: text;
   color: transparent;
   animation: hkShimmer 4.5s ease-in-out infinite;
-  filter: drop-shadow(0 0 22px oklch(0.78 0.15 85 / 0.35));
+  filter: drop-shadow(0 0 22px oklch(0.58 0.14 248 / 0.35));
 }
 @keyframes hkShimmer {
   0%   { background-position: 200% 0; }
@@ -136,8 +137,8 @@
   background: conic-gradient(
     from var(--svc-angle, 0deg),
     transparent 0deg,
-    oklch(0.86 0.13 88 / 0.9) 40deg,
-    oklch(0.62 0.16 78 / 0.9) 80deg,
+    oklch(0.72 0.12 245 / 0.9) 40deg,
+    oklch(0.45 0.13 252 / 0.9) 80deg,
     transparent 140deg,
     transparent 360deg
   );
@@ -156,7 +157,7 @@
   position: absolute;
   inset: -14px;
   border-radius: calc(var(--radius) + 14px);
-  background: radial-gradient(60% 60% at 50% 50%, oklch(0.78 0.15 85 / 0.55), transparent 70%);
+  background: radial-gradient(60% 60% at 50% 50%, oklch(0.58 0.14 248 / 0.55), transparent 70%);
   filter: blur(22px);
   opacity: 0;
   transition: opacity 0.7s ease;
@@ -187,8 +188,8 @@
   border-radius: inherit;
   pointer-events: none;
   opacity: 0;
-  border: 1.5px solid oklch(0.86 0.13 88);
-  filter: drop-shadow(0 0 10px oklch(0.86 0.13 88 / 0.6));
+  border: 1.5px solid oklch(0.72 0.12 245);
+  filter: drop-shadow(0 0 10px oklch(0.72 0.12 245 / 0.6));
   transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 1;
 }
@@ -220,21 +221,21 @@
 /* Light premium section (white with warm cream tint) */
 .section-light {
   background:
-    radial-gradient(60% 55% at 50% 0%, oklch(0.96 0.03 85 / 0.55), transparent 70%),
-    linear-gradient(180deg, oklch(0.985 0.008 90), oklch(0.965 0.014 88));
-  color: oklch(0.18 0.02 265);
+    radial-gradient(60% 55% at 50% 0%, oklch(0.95 0.025 245 / 0.55), transparent 70%),
+    linear-gradient(180deg, oklch(0.985 0.005 250), oklch(0.96 0.012 248));
+  color: oklch(0.17 0.025 255);
 }
-.section-light .muted-ink { color: oklch(0.38 0.02 265); }
-.section-light .soft-ink { color: oklch(0.45 0.02 265); }
+.section-light .muted-ink { color: oklch(0.38 0.02 255); }
+.section-light .soft-ink { color: oklch(0.45 0.02 255); }
 .section-light .light-card {
   background: #ffffff;
-  border: 1px solid oklch(0.9 0.02 90);
+  border: 1px solid oklch(0.9 0.015 250);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    0 20px 40px -24px oklch(0.62 0.16 78 / 0.28);
+    0 20px 40px -24px oklch(0.45 0.13 252 / 0.28);
 }
 .section-light .light-card.corner-frame::before,
 .section-light .light-card.corner-frame::after {
-  border-color: oklch(0.62 0.16 78);
-  filter: drop-shadow(0 0 8px oklch(0.62 0.16 78 / 0.55));
+  border-color: oklch(0.45 0.13 252);
+  filter: drop-shadow(0 0 8px oklch(0.45 0.13 252 / 0.55));
 }

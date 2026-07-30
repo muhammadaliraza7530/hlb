@@ -91,17 +91,17 @@ export function ProjectsCarousel({ projects }: { projects: Project[] }) {
             onClick={(e) => celebrate(e.clientX, e.clientY)}
             onMouseEnter={() => { pausedRef.current = true; }}
             onMouseLeave={() => { pausedRef.current = false; }}
-            className="group relative shrink-0 overflow-hidden rounded-[1.75rem] border border-white/10 bg-[oklch(0.13_0.03_265)] text-left shadow-[0_24px_80px_-40px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-0.5 hover:border-[oklch(0.78_0.15_85)]/50 hover:shadow-[0_28px_90px_-34px_rgba(0,0,0,0.6)]"
+            className="group relative shrink-0 overflow-hidden rounded-[1.75rem] border border-white/10 bg-[oklch(0.13_0.03_265)] text-left shadow-[0_24px_80px_-40px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-0.5 hover:border-[oklch(0.58_0.14_248)]/50 hover:shadow-[0_28px_90px_-34px_rgba(0,0,0,0.6)]"
             style={{ width: cardW, height: cardW * 1.25 }}
           >
-            <div className="absolute inset-0 bg-[oklch(0.14_0.03_265)]/75" />
+            <div className="absolute inset-0 bg-[oklch(0.16_0.03_255)]/75" />
             <img 
               src={p.img} 
               alt={p.alt ?? p.title} 
               loading="lazy" 
               decoding="async" 
               draggable={false}
-              className="absolute inset-0 h-full w-full object-contain object-center bg-[oklch(0.14_0.03_265)] transition-transform duration-[1.2s] ease-out group-hover:scale-[1.04]" 
+              className="absolute inset-0 h-full w-full object-contain object-center bg-[oklch(0.16_0.03_255)] transition-transform duration-[1.2s] ease-out group-hover:scale-[1.04]" 
             />
             
             {/* Inner Border Ring for premium depth */}
@@ -114,13 +114,13 @@ export function ProjectsCarousel({ projects }: { projects: Project[] }) {
             
             {/* Content */}
             <div className="absolute inset-x-0 bottom-0 p-6">
-              <div className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] text-[oklch(0.86_0.13_88)] backdrop-blur-sm">
+              <div className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.28em] text-[oklch(0.72_0.12_245)] backdrop-blur-sm">
                 {p.tag}
               </div>
               <div className="mt-3 font-display text-xl font-black leading-tight tracking-tight text-white drop-shadow-lg sm:text-2xl">
                 {p.title}
               </div>
-              <div className="mt-4 h-[2px] w-14 rounded-full bg-[oklch(0.78_0.15_85)] transition-all duration-500 ease-out" />
+              <div className="mt-4 h-[2px] w-14 rounded-full bg-[oklch(0.58_0.14_248)] transition-all duration-500 ease-out" />
             </div>
           </button>
         ))}

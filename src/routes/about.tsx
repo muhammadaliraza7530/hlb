@@ -30,7 +30,7 @@ function Page() {
       <section className="relative pt-32 pb-16 sm:pt-40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <Reveal>
-            <div className="text-[10px] uppercase tracking-[0.5em] text-[oklch(0.86_0.13_88)]">— About Us</div>
+            <div className="text-[10px] uppercase tracking-[0.5em] text-[oklch(0.72_0.12_245)]">— About Us</div>
             <h1 className="mt-4 font-display font-black leading-[0.95] tracking-tight text-[clamp(2.4rem,9vw,5.5rem)]">
               Building trust that <span className="gold-text">never shakes down.</span>
             </h1>
@@ -41,17 +41,17 @@ function Page() {
       <section className="relative py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-5 md:gap-16">
           <Reveal className="md:col-span-2">
-            <div className="overflow-hidden rounded-3xl border border-[oklch(0.78_0.15_85)]/40 bg-white/[0.02] p-8">
+            <div className="overflow-hidden rounded-3xl border border-[oklch(0.58_0.14_248)]/40 bg-white/[0.02] p-8">
               <img src="/hlb/ceo-portrait.jpg" alt="Tanveer Ishtiaq Khan — Founder & CEO"
                 className="mx-auto h-auto w-full max-w-[300px] object-contain" />
               <div className="mt-6 text-center">
-                <div className="text-[10px] uppercase tracking-[0.4em] text-[oklch(0.86_0.13_88)]">Founder &amp; CEO</div>
+                <div className="text-[10px] uppercase tracking-[0.4em] text-[oklch(0.72_0.12_245)]">Founder &amp; CEO</div>
                 <div className="mt-2 font-display text-2xl font-black">TANVEER ISHTIAQ KHAN</div>
               </div>
             </div>
           </Reveal>
           <Reveal delay={0.1} className="md:col-span-3">
-            <div className="text-[10px] uppercase tracking-[0.5em] text-[oklch(0.86_0.13_88)]">— Message from the Founder</div>
+            <div className="text-[10px] uppercase tracking-[0.5em] text-[oklch(0.72_0.12_245)]">— Message from the Founder</div>
             <h2 className="mt-3 font-display text-3xl font-black sm:text-4xl">A word from our CEO.</h2>
             <p className="mt-6 text-white/70 leading-relaxed">
               With over 35 years of remarkable achievements and accomplishments, we are
@@ -72,7 +72,7 @@ function Page() {
               is a downstream employer of more than 800 workers at company project
               sites across Pakistan.
             </p>
-            <p className="mt-6 font-display text-lg text-[oklch(0.86_0.13_88)]">We believe in our men.</p>
+            <p className="mt-6 font-display text-lg text-[oklch(0.72_0.12_245)]">We believe in our men.</p>
             <p className="mt-2 text-sm text-white/50">— Yours sincerely, Tanveer Ishtiaq Khan · Founder &amp; CEO</p>
           </Reveal>
         </div>
@@ -81,7 +81,7 @@ function Page() {
       <section className="relative py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <Reveal>
-            <div className="text-[10px] uppercase tracking-[0.5em] text-[oklch(0.86_0.13_88)]">— About Us</div>
+            <div className="text-[10px] uppercase tracking-[0.5em] text-[oklch(0.72_0.12_245)]">— About Us</div>
             <h2 className="mt-3 font-display text-3xl font-black sm:text-5xl">Three decades of building Pakistan.</h2>
           </Reveal>
           <Reveal delay={0.1}>
@@ -99,7 +99,7 @@ function Page() {
 
           <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
             {stats.map((s) => (
-              <div key={s.l} className="rounded-xl border border-[oklch(0.78_0.15_85)]/30 bg-white/[0.02] p-5 text-center">
+              <div key={s.l} className="rounded-xl border border-[oklch(0.58_0.14_248)]/30 bg-white/[0.02] p-5 text-center">
                 <div className="font-display text-4xl gold-text sm:text-5xl">
                   <AnimatedCounter value={s.n} suffix={s.suffix} />
                 </div>
@@ -119,7 +119,7 @@ function Page() {
           ].map((it, i) => (
             <Reveal key={it.title} delay={i * 0.08}>
               <div className="corner-frame h-full rounded-2xl border border-white/10 bg-white/[0.02] p-8">
-                <div className="text-[10px] uppercase tracking-[0.4em] text-[oklch(0.86_0.13_88)]">0{i + 1}</div>
+                <div className="text-[10px] uppercase tracking-[0.4em] text-[oklch(0.72_0.12_245)]">0{i + 1}</div>
                 <h3 className="mt-3 font-display text-2xl font-black">{it.title}</h3>
                 <p className="mt-4 text-sm leading-relaxed text-white/60">{it.body}</p>
               </div>
@@ -128,7 +128,7 @@ function Page() {
         </div>
         <div className="mt-12 text-center">
           <Link to="/contact"
-            className="inline-block rounded-full bg-[oklch(0.78_0.15_85)] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.15_0.03_265)]">
+            className="inline-block rounded-full bg-[oklch(0.58_0.14_248)] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.98_0.005_250)]">
             Work With {HLB.brand}
           </Link>
         </div>

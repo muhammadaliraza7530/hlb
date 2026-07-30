@@ -27,7 +27,7 @@ function Page() {
       <section className="relative pt-32 pb-8 sm:pt-40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <Reveal>
-            <div className="text-[10px] uppercase tracking-[0.5em] text-[oklch(0.86_0.13_88)]">— Contacts</div>
+            <div className="text-[10px] uppercase tracking-[0.5em] text-[oklch(0.72_0.12_245)]">— Contacts</div>
             <h1 className="mt-4 font-display font-black leading-[0.95] tracking-tight text-[clamp(2.4rem,9vw,5.5rem)]">
               Let's start a <span className="gold-text">project.</span>
             </h1>
@@ -46,50 +46,50 @@ function Page() {
                 onSubmit={(e) => { e.preventDefault(); setSent(true); celebrate(e.currentTarget.getBoundingClientRect().left + 100, e.currentTarget.getBoundingClientRect().top + 50); }}
               >
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <input required placeholder="Name *" className="w-full rounded-lg border border-white/10 bg-[oklch(0.19_0.04_265)] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-[oklch(0.78_0.15_85)] focus:outline-none" />
-                  <input required type="email" placeholder="Email *" className="w-full rounded-lg border border-white/10 bg-[oklch(0.19_0.04_265)] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-[oklch(0.78_0.15_85)] focus:outline-none" />
+                  <input required placeholder="Name *" className="w-full rounded-lg border border-white/10 bg-[oklch(0.19_0.04_265)] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-[oklch(0.58_0.14_248)] focus:outline-none" />
+                  <input required type="email" placeholder="Email *" className="w-full rounded-lg border border-white/10 bg-[oklch(0.19_0.04_265)] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-[oklch(0.58_0.14_248)] focus:outline-none" />
                 </div>
-                <input placeholder="Subject" className="w-full rounded-lg border border-white/10 bg-[oklch(0.19_0.04_265)] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-[oklch(0.78_0.15_85)] focus:outline-none" />
-                <textarea required rows={5} placeholder="Message *" className="w-full rounded-lg border border-white/10 bg-[oklch(0.19_0.04_265)] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-[oklch(0.78_0.15_85)] focus:outline-none" />
+                <input placeholder="Subject" className="w-full rounded-lg border border-white/10 bg-[oklch(0.19_0.04_265)] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-[oklch(0.58_0.14_248)] focus:outline-none" />
+                <textarea required rows={5} placeholder="Message *" className="w-full rounded-lg border border-white/10 bg-[oklch(0.19_0.04_265)] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-[oklch(0.58_0.14_248)] focus:outline-none" />
                 <button type="submit"
-                  className="rounded-full bg-[oklch(0.78_0.15_85)] px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.15_0.03_265)] transition hover:scale-[1.02]">
+                  className="rounded-full bg-[oklch(0.58_0.14_248)] px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.98_0.005_250)] transition hover:scale-[1.02]">
                   Send Message
                 </button>
-                {sent && <div className="text-sm text-[oklch(0.86_0.13_88)]">Thanks — we'll reach out shortly.</div>}
+                {sent && <div className="text-sm text-[oklch(0.72_0.12_245)]">Thanks — we'll reach out shortly.</div>}
               </form>
             </div>
           </Reveal>
 
           <Reveal delay={0.1}>
             <div className="space-y-5">
-              <div className="text-[10px] uppercase tracking-[0.5em] text-[oklch(0.86_0.13_88)]">— Our Contact Details</div>
+              <div className="text-[10px] uppercase tracking-[0.5em] text-[oklch(0.72_0.12_245)]">— Our Contact Details</div>
               <h2 className="font-display text-3xl font-black sm:text-4xl">Reach us directly.</h2>
 
               <div className="mt-6 space-y-5">
                 <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-5">
-                  <MapPin className="mt-1 h-5 w-5 text-[oklch(0.86_0.13_88)]" />
+                  <MapPin className="mt-1 h-5 w-5 text-[oklch(0.72_0.12_245)]" />
                   <div>
-                    <div className="text-[10px] uppercase tracking-[0.3em] text-[oklch(0.86_0.13_88)]">Our Address</div>
+                    <div className="text-[10px] uppercase tracking-[0.3em] text-[oklch(0.72_0.12_245)]">Our Address</div>
                     <div className="mt-1 text-sm text-white/70">{HLB.address}</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-5">
-                  <Mail className="mt-1 h-5 w-5 text-[oklch(0.86_0.13_88)]" />
+                  <Mail className="mt-1 h-5 w-5 text-[oklch(0.72_0.12_245)]" />
                   <div>
-                    <div className="text-[10px] uppercase tracking-[0.3em] text-[oklch(0.86_0.13_88)]">Our Mailbox</div>
-                    <a href={`mailto:${HLB.email}`} className="mt-1 block text-sm text-white/70 hover:text-[oklch(0.86_0.13_88)]">{HLB.email}</a>
+                    <div className="text-[10px] uppercase tracking-[0.3em] text-[oklch(0.72_0.12_245)]">Our Mailbox</div>
+                    <a href={`mailto:${HLB.email}`} className="mt-1 block text-sm text-white/70 hover:text-[oklch(0.72_0.12_245)]">{HLB.email}</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.02] p-5">
-                  <Phone className="mt-1 h-5 w-5 text-[oklch(0.86_0.13_88)]" />
+                  <Phone className="mt-1 h-5 w-5 text-[oklch(0.72_0.12_245)]" />
                   <div>
-                    <div className="text-[10px] uppercase tracking-[0.3em] text-[oklch(0.86_0.13_88)]">Our Phone</div>
-                    <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm text-white/70 hover:text-[oklch(0.86_0.13_88)]">{HLB.phone1}</a>
-                    <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="block text-sm text-white/70 hover:text-[oklch(0.86_0.13_88)]">{HLB.phone2}</a>
+                    <div className="text-[10px] uppercase tracking-[0.3em] text-[oklch(0.72_0.12_245)]">Our Phone</div>
+                    <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm text-white/70 hover:text-[oklch(0.72_0.12_245)]">{HLB.phone1}</a>
+                    <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="block text-sm text-white/70 hover:text-[oklch(0.72_0.12_245)]">{HLB.phone2}</a>
                   </div>
                 </div>
                 <a href={WA_HREF} target="_blank" rel="noopener noreferrer"
-                  className="block rounded-full bg-[oklch(0.62_0.16_150)] px-6 py-4 text-center text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.15_0.03_265)] hover:scale-[1.02] transition">
+                  className="block rounded-full bg-[oklch(0.62_0.16_150)] px-6 py-4 text-center text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.98_0.005_250)] hover:scale-[1.02] transition">
                   Chat on WhatsApp
                 </a>
               </div>

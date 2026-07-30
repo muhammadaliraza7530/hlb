@@ -10,7 +10,7 @@ export function LogoMark({ size = 44, className = "" }: { size?: number; classNa
       <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/[0.08] to-transparent" />
 
       {/* Inner gold ring */}
-      {/* <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-[oklch(0.78_0.15_85)]/30" /> */}
+      {/* <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-[oklch(0.58_0.14_248)]/30" /> */}
 
       <img
         src={HLB.logo}

@@ -13,7 +13,7 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      "group overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:border-[oklch(0.78_0.15_85)]/30 data-[state=open]:border-[oklch(0.78_0.15_85)]/50 data-[state=open]:bg-white/[0.04]",
+      "group overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:border-[oklch(0.58_0.14_248)]/30 data-[state=open]:border-[oklch(0.58_0.14_248)]/50 data-[state=open]:bg-white/[0.04]",
       className
     )}
     {...props}
@@ -29,13 +29,13 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between px-6 py-5 text-left font-display text-lg font-bold tracking-tight text-white/80 transition-colors hover:text-[oklch(0.86_0.13_88)] focus-visible:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-[oklch(0.78_0.15_85)]/40 [&[data-state=open]>div>svg]:rotate-45 [&[data-state=open]]:text-[oklch(0.86_0.13_88)]",
+        "flex flex-1 items-center justify-between px-6 py-5 text-left font-display text-lg font-bold tracking-tight text-white/80 transition-colors hover:text-[oklch(0.72_0.12_245)] focus-visible:outline-none focus-visible:ring-inset focus-visible:ring-2 focus-visible:ring-[oklch(0.58_0.14_248)]/40 [&[data-state=open]>div>svg]:rotate-45 [&[data-state=open]]:text-[oklch(0.72_0.12_245)]",
         className
       )}
       {...props}
     >
       {children}
-      <div className="ml-4 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-[oklch(0.86_0.13_88)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:border-[oklch(0.78_0.15_85)]/50">
+      <div className="ml-4 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/10 bg-white/5 text-[oklch(0.72_0.12_245)] transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:border-[oklch(0.58_0.14_248)]/50">
         <Plus className="h-4 w-4 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" />
       </div>
     </AccordionPrimitive.Trigger>

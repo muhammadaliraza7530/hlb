@@ -34,13 +34,13 @@ function Card({ slide, index, posMV, gap, onSelect, isActive }: {
   
   // Enhanced shadow to make the active card pop more dramatically
   const shadow = useTransform(centerT, (t) =>
-    `0 0 0 1px oklch(0.86 0.13 88 / ${0.5 * t}), 0 20px 50px -12px oklch(0.86 0.13 88 / ${0.5 * t}), 0 30px 60px -20px black/70`);
+    `0 0 0 1px oklch(0.72 0.12 245 / ${0.5 * t}), 0 20px 50px -12px oklch(0.72 0.12 245 / ${0.5 * t}), 0 30px 60px -20px black/70`);
 
   return (
     <motion.button
       type="button"
       onClick={(e) => { onSelect(index); celebrate(e.clientX, e.clientY); }}
-      className="absolute left-1/2 top-1/2 rounded-[1.75rem] outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.86_0.13_88)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      className="absolute left-1/2 top-1/2 rounded-[1.75rem] outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.72_0.12_245)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       style={{ x, y: yShift, rotate, scale, opacity, zIndex, filter: blur,
         translateX: "-50%", translateY: "-50%", willChange: "transform, filter, opacity" }}
     >
@@ -48,7 +48,7 @@ function Card({ slide, index, posMV, gap, onSelect, isActive }: {
         {/* Glow Background */}
         <motion.div aria-hidden className="pointer-events-none absolute -inset-[12px] rounded-[2rem]"
           style={{ opacity: centerT,
-            background: "radial-gradient(60% 55% at 50% 50%, oklch(0.86 0.13 88 / 0.6), transparent 70%)",
+            background: "radial-gradient(60% 55% at 50% 50%, oklch(0.72 0.12 245 / 0.6), transparent 70%)",
             filter: "blur(20px)" }} />
         
         {/* Card Container */}
@@ -75,8 +75,8 @@ function Card({ slide, index, posMV, gap, onSelect, isActive }: {
             <div className="font-display text-xl font-black uppercase tracking-tight text-white drop-shadow-lg sm:text-2xl">
               {slide.title}
             </div>
-            <div className="mt-2 flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[oklch(0.86_0.13_88)] sm:text-[11px]">
-              <span className="h-1 w-1 rounded-full bg-[oklch(0.86_0.13_88)]" />
+            <div className="mt-2 flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-[oklch(0.72_0.12_245)] sm:text-[11px]">
+              <span className="h-1 w-1 rounded-full bg-[oklch(0.72_0.12_245)]" />
               {slide.tag}
             </div>
           </div>
@@ -147,7 +147,7 @@ export function HeroCarousel() {
   return (
     <div className="relative h-[60vh] min-h-[420px] w-full select-none sm:h-[72vh] sm:min-h-[540px]">
       {/* Ambient Background Glow */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-[radial-gradient(50%_60%_at_50%_100%,oklch(0.86_0.13_88_/_0.15),transparent_70%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-[radial-gradient(50%_60%_at_50%_100%,oklch(0.72_0.12_245_/_0.15),transparent_70%)]" />
       
       <motion.div
         className="absolute inset-0 touch-pan-y cursor-grab active:cursor-grabbing"
@@ -199,7 +199,7 @@ export function HeroCarousel() {
             onClick={() => onSelect(i, false)}
             className={`h-2 rounded-full transition-all duration-500 ease-out hover:opacity-80 ${
               i === active 
-                ? "w-10 bg-[oklch(0.86_0.13_88)] shadow-[0_0_10px_oklch(0.86_0.13_88)]" 
+                ? "w-10 bg-[oklch(0.72_0.12_245)] shadow-[0_0_10px_oklch(0.72_0.12_245)]" 
                 : "w-2 bg-white/25 hover:bg-white/40"
             }`}
           />

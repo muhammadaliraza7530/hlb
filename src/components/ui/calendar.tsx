@@ -62,7 +62,7 @@ function Calendar({
           defaultClassNames.dropdowns,
         ),
         dropdown_root: cn(
-          "has-focus:border-[oklch(0.78_0.15_85)] border-white/10 shadow-xs has-focus:ring-[oklch(0.78_0.15_85)]/40 has-focus:ring-[3px] relative rounded-md bg-white/5 backdrop-blur-md",
+          "has-focus:border-[oklch(0.58_0.14_248)] border-white/10 shadow-xs has-focus:ring-[oklch(0.58_0.14_248)]/40 has-focus:ring-[3px] relative rounded-md bg-white/5 backdrop-blur-md",
           defaultClassNames.dropdown_root,
         ),
         dropdown: cn("bg-popover absolute inset-0 opacity-0", defaultClassNames.dropdown),
@@ -89,11 +89,11 @@ function Calendar({
           "group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-full [&:last-child[data-selected=true]_button]:rounded-r-full",
           defaultClassNames.day,
         ),
-        range_start: cn("bg-[oklch(0.78_0.15_85)]/20 rounded-l-full", defaultClassNames.range_start),
-        range_middle: cn("bg-[oklch(0.78_0.15_85)]/10 rounded-none", defaultClassNames.range_middle),
-        range_end: cn("bg-[oklch(0.78_0.15_85)]/20 rounded-r-full", defaultClassNames.range_end),
+        range_start: cn("bg-[oklch(0.58_0.14_248)]/20 rounded-l-full", defaultClassNames.range_start),
+        range_middle: cn("bg-[oklch(0.58_0.14_248)]/10 rounded-none", defaultClassNames.range_middle),
+        range_end: cn("bg-[oklch(0.58_0.14_248)]/20 rounded-r-full", defaultClassNames.range_end),
         today: cn(
-          "ring-1 ring-inset ring-[oklch(0.78_0.15_85)]/40 rounded-full text-[oklch(0.86_0.13_88)] data-[selected=true]:rounded-none",
+          "ring-1 ring-inset ring-[oklch(0.58_0.14_248)]/40 rounded-full text-[oklch(0.72_0.12_245)] data-[selected=true]:rounded-none",
           defaultClassNames.today,
         ),
         outside: cn(
@@ -165,7 +165,7 @@ function CalendarDayButton({
       data-range-end={modifiers.range_end}
       data-range-middle={modifiers.range_middle}
       className={cn(
-        "data-[selected-single=true]:bg-[oklch(0.78_0.15_85)] data-[selected-single=true]:text-[oklch(0.15_0.03_265)] data-[selected-single=true]:shadow-[0_8px_20px_-6px_oklch(0.78_0.15_85)] data-[range-middle=true]:bg-[oklch(0.78_0.15_85)]/15 data-[range-middle=true]:text-white data-[range-middle=true]:rounded-none data-[range-start=true]:bg-[oklch(0.78_0.15_85)] data-[range-start=true]:text-[oklch(0.15_0.03_265)] data-[range-start=true]:rounded-l-full data-[range-end=true]:bg-[oklch(0.78_0.15_85)] data-[range-end=true]:text-[oklch(0.15_0.03_265)] data-[range-end=true]:rounded-r-full group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-[oklch(0.78_0.15_85)]/50 flex aspect-square h-auto w-full min-w-(--cell-size) flex-col gap-1 font-normal leading-none transition-all duration-300 hover:bg-white/5 group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px] [&>span]:text-xs [&>span]:opacity-70",
+        "data-[selected-single=true]:bg-[oklch(0.58_0.14_248)] data-[selected-single=true]:text-[oklch(0.98_0.005_250)] data-[selected-single=true]:shadow-[0_8px_20px_-6px_oklch(0.58_0.14_248)] data-[range-middle=true]:bg-[oklch(0.58_0.14_248)]/15 data-[range-middle=true]:text-white data-[range-middle=true]:rounded-none data-[range-start=true]:bg-[oklch(0.58_0.14_248)] data-[range-start=true]:text-[oklch(0.98_0.005_250)] data-[range-start=true]:rounded-l-full data-[range-end=true]:bg-[oklch(0.58_0.14_248)] data-[range-end=true]:text-[oklch(0.98_0.005_250)] data-[range-end=true]:rounded-r-full group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-[oklch(0.58_0.14_248)]/50 flex aspect-square h-auto w-full min-w-(--cell-size) flex-col gap-1 font-normal leading-none transition-all duration-300 hover:bg-white/5 group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px] [&>span]:text-xs [&>span]:opacity-70",
         defaultClassNames.day,
         className,
       )}

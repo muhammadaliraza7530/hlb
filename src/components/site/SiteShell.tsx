@@ -23,7 +23,7 @@ function ProgressBar() {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-gradient-to-r from-[oklch(0.78_0.15_85)] to-[oklch(0.86_0.13_88)] shadow-[0_0_10px_oklch(0.78_0.15_85)]"
+      className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-gradient-to-r from-[oklch(0.58_0.14_248)] to-[oklch(0.72_0.12_245)] shadow-[0_0_10px_oklch(0.58_0.14_248)]"
     />
   );
 }
@@ -65,7 +65,7 @@ function SiteNav() {
               {({ isActive }) => (
                 <>
                   {l.label}
-                  <span className={`absolute -bottom-1.5 left-0 h-px bg-[oklch(0.78_0.15_85)] transition-all duration-500 ease-out ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                  <span className={`absolute -bottom-1.5 left-0 h-px bg-[oklch(0.58_0.14_248)] transition-all duration-500 ease-out ${isActive ? "w-full" : "w-0 group-hover:w-full"
                     }`} />
                 </>
               )}
@@ -75,9 +75,9 @@ function SiteNav() {
 
         <Link
           to="/contact"
-          className="group relative hidden overflow-hidden rounded-full border border-[oklch(0.78_0.15_85)]/40 px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[oklch(0.86_0.13_88)] transition-all duration-500 hover:border-[oklch(0.78_0.15_85)] hover:text-[oklch(0.15_0.03_265)] md:inline-block"
+          className="group relative hidden overflow-hidden rounded-full border border-[oklch(0.58_0.14_248)]/40 px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[oklch(0.72_0.12_245)] transition-all duration-500 hover:border-[oklch(0.58_0.14_248)] hover:text-[oklch(0.98_0.005_250)] md:inline-block"
         >
-          <span className="absolute inset-0 -z-10 translate-y-full bg-[oklch(0.78_0.15_85)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
+          <span className="absolute inset-0 -z-10 translate-y-full bg-[oklch(0.58_0.14_248)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
           Start a Project
         </Link>
 
@@ -100,7 +100,7 @@ function SiteNav() {
             className="fixed inset-0 z-50 bg-[oklch(0.10_0.02_265)]/95 backdrop-blur-2xl md:hidden"
           >
             {/* Decorative Background Elements */}
-            <div className="pointer-events-none absolute top-1/4 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[oklch(0.78_0.15_85)]/10 blur-[100px]" />
+            <div className="pointer-events-none absolute top-1/4 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[oklch(0.58_0.14_248)]/10 blur-[100px]" />
 
             <div className="relative flex items-center justify-between px-6 py-5">
               <Link to="/" onClick={() => setOpen(false)} className="flex items-center gap-3">
@@ -144,7 +144,7 @@ function SiteNav() {
                 <Link
                   to="/contact"
                   onClick={() => setOpen(false)}
-                  className="mt-6 rounded-full bg-[oklch(0.78_0.15_85)] px-10 py-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.15_0.03_265)] shadow-[0_8px_30px_-8px_oklch(0.78_0.15_85)]"
+                  className="mt-6 rounded-full bg-[oklch(0.58_0.14_248)] px-10 py-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.98_0.005_250)] shadow-[0_8px_30px_-8px_oklch(0.58_0.14_248)]"
                 >
                   Start a Project
                 </Link>
@@ -161,7 +161,7 @@ function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-white/5 bg-[oklch(0.10_0.02_265)] pt-20">
       {/* Top Glow */}
-      <div className="pointer-events-none absolute -top-px left-1/2 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-[oklch(0.78_0.15_85)] to-transparent opacity-50" />
+      <div className="pointer-events-none absolute -top-px left-1/2 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-[oklch(0.58_0.14_248)] to-transparent opacity-50" />
 
       <div className="mx-auto grid max-w-[1400px] gap-12 px-6 pb-12 lg:px-10 md:grid-cols-12">
         <div className="md:col-span-5">
@@ -182,11 +182,11 @@ function Footer() {
         </div>
 
         <div className="md:col-span-3 md:col-start-7">
-          <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.86_0.13_88)]">Explore</div>
+          <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.72_0.12_245)]">Explore</div>
           <div className="mt-5 flex flex-col gap-3 text-white/50">
             {links.map(l => (
               <Link key={l.to} to={l.to} className="group flex items-center gap-2 w-fit text-sm transition-colors hover:text-white">
-                <span className="h-px w-0 bg-[oklch(0.78_0.15_85)] transition-all duration-300 group-hover:w-4"></span>
+                <span className="h-px w-0 bg-[oklch(0.58_0.14_248)] transition-all duration-300 group-hover:w-4"></span>
                 {l.label}
               </Link>
             ))}
@@ -195,7 +195,7 @@ function Footer() {
 
         {/* Contact Section - Strictly uniform alignment for all items */}
         <div className="md:col-span-3">
-          <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.86_0.13_88)]">Contact</div>
+          <div className="text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.72_0.12_245)]">Contact</div>
           <div className="mt-6 flex flex-col gap-5 text-sm text-white/50">
 
             {/* Address */}
@@ -233,7 +233,7 @@ function Footer() {
       <div className="border-t border-white/5 py-6">
         <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-3 px-6 text-center text-[10px] font-bold uppercase tracking-[0.25em] text-white/30 lg:flex-row lg:px-10 lg:text-left">
           <span>© {new Date().getFullYear()} HLB Constructors — All Rights Reserved</span>
-          <span className="text-[oklch(0.86_0.13_88)]/60">Design · Build · Deliver</span>
+          <span className="text-[oklch(0.72_0.12_245)]/60">Design · Build · Deliver</span>
         </div>
       </div>
     </footer>
@@ -251,7 +251,7 @@ function WhatsAppFab() {
         e.preventDefault();
         window.open(WA_HREF, "_blank", "noopener,noreferrer");
       }}
-      className="group fixed bottom-6 right-6 z-[100] grid h-14 w-14 cursor-pointer place-items-center rounded-full bg-[oklch(0.62_0.16_150)] text-[oklch(0.14_0.03_265)] shadow-[0_0_30px_-4px_oklch(0.62_0.16_150/0.6)] transition-transform duration-300 hover:scale-110 sm:bottom-8 sm:right-8 sm:h-16 sm:w-16"
+      className="group fixed bottom-6 right-6 z-[100] grid h-14 w-14 cursor-pointer place-items-center rounded-full bg-[oklch(0.62_0.16_150)] text-[oklch(0.16_0.03_255)] shadow-[0_0_30px_-4px_oklch(0.62_0.16_150/0.6)] transition-transform duration-300 hover:scale-110 sm:bottom-8 sm:right-8 sm:h-16 sm:w-16"
     >
       <span className="absolute inset-0 rounded-full bg-[oklch(0.62_0.16_150)] opacity-50 blur-md transition-opacity duration-300 group-hover:opacity-80"></span>
       <span className="absolute inset-0 rounded-full bg-[oklch(0.62_0.16_150)] animate-ping opacity-20"></span>
@@ -265,7 +265,7 @@ function WhatsAppFab() {
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
-    <div className="grain vignette relative min-h-screen overflow-x-hidden bg-background text-foreground selection:bg-[oklch(0.78_0.15_85)] selection:text-[oklch(0.15_0.03_265)]">
+    <div className="grain vignette relative min-h-screen overflow-x-hidden bg-background text-foreground selection:bg-[oklch(0.58_0.14_248)] selection:text-[oklch(0.98_0.005_250)]">
       <ProgressBar />
       <SiteNav />
       <main>{children}</main>

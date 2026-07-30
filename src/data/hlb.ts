@@ -4,7 +4,7 @@ export const HLB = {
   founded: 1985,
   founder: "Tanveer Ishtiaq Khan",
   category: "PEC C-4",
-  phone1: "0302-8288752",
+  phone1: "0326-0892858",
   phone2: "0333-2108752",
   email: "projects@hlbpk.com",
   address:
@@ -12,7 +12,7 @@ export const HLB = {
   logo: "/hlb/logo.png",
 };
 
-export const WA_NUMBER = "923028288752";
+export const WA_NUMBER = "923260892858";
 export const WA_HREF = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
   "Hi HLB Constructors, I'd like to know more about your services."
 )}`;
