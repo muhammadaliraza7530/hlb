@@ -49,7 +49,7 @@ function SiteNav() {
           <div className="transition-transform duration-500 group-hover:rotate-[10deg] bg-transparent">
             <LogoMark size={62} />
           </div>
-          <span className="hidden font-display text-[11px] font-bold tracking-[0.3em] text-white/90 transition-colors group-hover:text-white sm:inline">
+          <span className="hidden font-display text-sm font-black tracking-[0.25em] text-white/90 transition-colors group-hover:text-white sm:inline sm:text-lg">
             HLB Constructors
           </span>
         </Link>

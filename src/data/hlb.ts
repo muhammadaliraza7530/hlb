@@ -17,20 +17,55 @@ export const WA_HREF = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
   "Hi HLB Constructors, I'd like to know more about your services."
 )}`;
 
-export const PROJECTS = [
-  { img: "/hlb/dayany.webp",      title: "The Court Heights",           tag: "Complete Project · High-Rise",      alt: "The Court Heights building exterior" },
-  { img: "/hlb/mahran.webp",      title: "The Court Twin Tower",        tag: "Complete Project · Twin Towers",   alt: "The Court Twin Tower buildings" },
-  { img: "/hlb/royal-elite.webp", title: "The Court Regency",          tag: "Complete Project · Luxury",       alt: "The Court Regency residential facade" },
-  { img: "/hlb/royal.webp",       title: "Jinnah Hospital  Gynae Ward",    tag: "Complete Project · Industrial",   alt: "The Court Industrial Park facility" },
-  { img: "/hlb/safron.webp",      title: "ROYAL ELITE HOMES",                    tag: "Complete Project · Tower",        alt: "AT Tower high-rise building" },
-  { img: "/hlb/burj.webp",        title: "SAFRON HEIGHTS",        tag: "Complete Project · Commercial",   alt: "Saima Burj Al Baraka exterior" },
-  { img: "/hlb/dayany.webp",      title: "DAYANY HEIGHTS",             tag: "Complete Project · High-Rise",      alt: "Cant View Lodges" },
-  { img: "/hlb/safron.webp",      title: "SAFRON HEIGHTS",             tag: "Complete Project · Residential",    alt: "Safron Heights building exterior" },
-  { img: "/hlb/royal.webp",       title: "ROYAL HOMES",                tag: "Complete Project · Residential",    alt: "Royal Homes residential complex" },
-  { img: "/hlb/royal-elite.webp", title: "ROYAL ELITE HOMES",         tag: "Complete Project · Luxury",         alt: "Royal Elite Homes residential facade" },
-  { img: "/hlb/mahran.webp",      title: "MAHRAN TWIN TOWERS",         tag: "Complete Project · Towers",         alt: "Mahran Twin Towers skyline" },
-  { img: "/hlb/burj.webp",        title: "BURJ AL-BARAKA",             tag: "Complete Project · Commercial",    alt: "Burj Al-Baraka commercial tower" },    
-];
+type ProjectGalleryEntry = {
+  title: string;
+  thumbnail: string;
+  images: string[];
+};
+
+const projectImageModules = import.meta.glob("/public/projectGrally/**/*.{jpg,jpeg,png,webp}", {
+  eager: true,
+  import: "default",
+});
+
+function toProjectGalleryEntries(): ProjectGalleryEntry[] {
+  const grouped = new Map<string, ProjectGalleryEntry>();
+
+  Object.entries(projectImageModules).forEach(([filePath, assetUrl]) => {
+    const normalizedPath = filePath.replace(/^\/public\//, "");
+    const segments = normalizedPath.split("/").filter(Boolean);
+
+    if (segments.length < 2) return;
+
+    const projectName = decodeURIComponent(segments[1]);
+    const fileName = decodeURIComponent(segments[segments.length - 1] ?? "");
+    const baseName = fileName.replace(/\.[^.]+$/, "").toLowerCase();
+
+    if (!grouped.has(projectName)) {
+      grouped.set(projectName, { title: projectName, thumbnail: "", images: [] });
+    }
+
+    const entry = grouped.get(projectName)!;
+    entry.images.push(assetUrl as string);
+
+    if (entry.thumbnail === "" || baseName === "img1" || baseName.startsWith("img1")) {
+      entry.thumbnail = assetUrl as string;
+    }
+  });
+
+  return Array.from(grouped.values())
+    .filter((entry) => entry.title !== "Cant View" && entry.thumbnail)
+    .sort((a, b) => a.title.localeCompare(b.title));
+}
+
+export const PROJECT_GALLERY = toProjectGalleryEntries();
+
+export const PROJECTS = PROJECT_GALLERY.map((project) => ({
+  img: project.thumbnail,
+  title: project.title,
+  tag: "Complete Project",
+  alt: `${project.title} project gallery`,
+}));
 
 export const HERO_BG_IMAGES = [
   "/hlb/dayany.webp",

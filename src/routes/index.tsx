@@ -83,11 +83,19 @@ function Hero() {
           — Welcome to HLB Constructors —
         </motion.p>
         <div className="relative overflow-hidden py-1">
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-1/2 z-0 flex -translate-y-1/2 justify-center">
+            <img
+              src={HLB.logo}
+              alt=""
+              className="h-[clamp(10rem,28vw,18rem)] w-auto object-contain opacity-[0.08] sm:h-[15rem] md:h-[18rem]"
+              draggable={false}
+            />
+          </div>
           <motion.h1
             initial={{ opacity: 0, x: -120, filter: "blur(14px)" }}
             animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-            className="text-center font-display font-black leading-[0.9] tracking-tight text-[clamp(3.4rem,15vw,12rem)]"
+            className="relative z-10 text-center font-display font-black leading-[0.9] tracking-tight text-[clamp(3.4rem,15vw,12rem)]"
           >
             <span className="hk-title-shimmer">HLB</span>
           </motion.h1>
@@ -95,11 +103,11 @@ function Hero() {
             initial={{ opacity: 0, x: 120, filter: "blur(14px)" }}
             animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
-            className="mt-3 text-center font-display font-semibold leading-[0.95] tracking-[0.22em] text-white/85 text-[clamp(0.9rem,3.6vw,2.4rem)]"
+            className="relative z-10 mt-3 text-center font-display font-semibold leading-[0.95] tracking-[0.22em] text-white/85 text-[clamp(0.9rem,3.6vw,2.4rem)]"
           >
-            <span className="mr-2 text-[oklch(0.72_0.12_245)]">&amp;</span>Constructors
-          </motion.div>
-        </div>
+            Constructors
+          </motion.div>        
+        </div>  
         <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-[oklch(0.72_0.12_245)] to-transparent" />
         <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-white/70 sm:text-base md:text-lg">
           High Land Builders &amp; Constructors — established in 1985 by
