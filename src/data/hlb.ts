@@ -39,8 +39,10 @@ function getImageSortValue(fileName: string): number {
 }
 
 const PRIORITY_ORDER = [
-  "The Court Regency",
   "The Court Heights",
+  "The Court Regency",
+  "The Court Twin Towers",
+  "The Court Industrial Park",
   "DAYANY HEIGHTS",
   "Creek View Tower",
   "BAHRIA HOSPITAL",
@@ -48,9 +50,7 @@ const PRIORITY_ORDER = [
   "ROYAL ELITE HOMES",
   "ABEEDA TOWERS",
   "MAHRAN TWIN TOWERS",
-  "The Court Twin Towers",
   "Jinnah Hospital",
-  "The Court Industrial Park",
   "Cant View",
 ];
 
