@@ -3,8 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
-import { PROJECT_GALLERY } from "@/data/hlb";
-import { celebrate } from "@/lib/confetti";
+import { PROJECTS } from "@/data/hlb";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -21,7 +20,7 @@ export const Route = createFileRoute("/projects")({
 });
 
 function Page() {
-  const [selectedProject, setSelectedProject] = useState<(typeof PROJECT_GALLERY)[number] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<(typeof PROJECTS)[number] | null>(null);
 
   return (
     <SiteShell>
@@ -39,13 +38,11 @@ function Page() {
       <section className="relative py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {PROJECT_GALLERY.map((project, i) => (
+            {PROJECTS.map((project, i) => (
               <Reveal key={project.title} delay={i * 0.05}>
                 <button
-                  onClick={(e) => {
-                    setSelectedProject(project);
-                    celebrate(e.clientX, e.clientY);
-                  }}
+                  type="button"
+                  onClick={() => setSelectedProject(project)}
                   className="group relative block w-full overflow-hidden rounded-[1.8rem] border border-white/10 bg-[oklch(0.16_0.03_255)] text-left shadow-[0_22px_60px_-38px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-0.5 hover:border-[oklch(0.58_0.14_248)]/55 hover:shadow-[0_28px_90px_-34px_rgba(0,0,0,0.6)]"
                 >
                   <div className="relative overflow-hidden bg-[oklch(0.12_0.03_265)]">
@@ -61,13 +58,10 @@ function Page() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-5">
                     <div className="inline-flex rounded-full bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-[oklch(0.72_0.12_245)] backdrop-blur-sm">
-                      Gallery
+                      {project.tag}
                     </div>
                     <div className="mt-4 font-display text-xl font-black leading-tight text-white sm:text-2xl">
                       {project.title}
-                    </div>
-                    <div className="mt-2 text-sm text-white/70">
-                      {project.images.length} photos
                     </div>
                     <div className="mt-4 h-[2px] w-12 rounded-full bg-[oklch(0.58_0.14_248)] transition-all duration-500 ease-out" />
                   </div>

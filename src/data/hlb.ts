@@ -17,55 +17,94 @@ export const WA_HREF = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
   "Hi HLB Constructors, I'd like to know more about your services."
 )}`;
 
-type ProjectGalleryEntry = {
+export type ProjectGalleryEntry = {
   title: string;
   thumbnail: string;
   images: string[];
 };
 
-const projectImageModules = import.meta.glob("/public/projectGrally/**/*.{jpg,jpeg,png,webp}", {
-  eager: true,
-  import: "default",
-});
+const projectImageModules = import.meta.glob(
+  "/public/projectGrally/**/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}",
+  { eager: true, query: "?url", import: "default" },
+);
+
+function normalizePublicAssetPath(filePath: string): string {
+  return filePath.replace(/^\/public/, "") || "/";
+}
+
+function getImageSortValue(fileName: string): number {
+  const match = fileName.match(/(\d+)/);
+  if (!match) return Number.MAX_SAFE_INTEGER;
+  return Number(match[1]);
+}
+
+const PRIORITY_ORDER = [
+  "The Court Regency",
+  "The Court Heights",
+  "DAYANY HEIGHTS",
+  "Creek View Tower",
+  "BAHRIA HOSPITAL",
+  "BAHRIA HOUSES",
+  "ROYAL ELITE HOMES",
+  "ABEEDA TOWERS",
+  "MAHRAN TWIN TOWERS",
+  "The Court Twin Towers",
+  "Jinnah Hospital",
+  "The Court Industrial Park",
+  "Cant View",
+];
 
 function toProjectGalleryEntries(): ProjectGalleryEntry[] {
   const grouped = new Map<string, ProjectGalleryEntry>();
 
-  Object.entries(projectImageModules).forEach(([filePath, assetUrl]) => {
-    const normalizedPath = filePath.replace(/^\/public\//, "");
-    const segments = normalizedPath.split("/").filter(Boolean);
-
-    if (segments.length < 2) return;
+  Object.keys(projectImageModules).forEach((filePath) => {
+    const segments = filePath.replace(/^\/public\//, "").split("/").filter(Boolean);
+    if (segments.length < 3) return;
 
     const projectName = decodeURIComponent(segments[1]);
-    const fileName = decodeURIComponent(segments[segments.length - 1] ?? "");
-    const baseName = fileName.replace(/\.[^.]+$/, "").toLowerCase();
 
     if (!grouped.has(projectName)) {
       grouped.set(projectName, { title: projectName, thumbnail: "", images: [] });
     }
 
-    const entry = grouped.get(projectName)!;
-    entry.images.push(assetUrl as string);
-
-    if (entry.thumbnail === "" || baseName === "img1" || baseName.startsWith("img1")) {
-      entry.thumbnail = assetUrl as string;
-    }
+    grouped.get(projectName)!.images.push(normalizePublicAssetPath(filePath));
   });
 
   return Array.from(grouped.values())
-    .filter((entry) => entry.title !== "Cant View" && entry.thumbnail)
-    .sort((a, b) => a.title.localeCompare(b.title));
+    .filter((entry) => entry.images.length > 0)
+    .map((entry) => {
+      const sortedImages = [...entry.images].sort((a, b) => {
+        const aName = a.split("/").pop() ?? "";
+        const bName = b.split("/").pop() ?? "";
+        const diff = getImageSortValue(aName) - getImageSortValue(bName);
+        return diff !== 0 ? diff : aName.localeCompare(bName);
+      });
+
+      return { ...entry, images: sortedImages, thumbnail: sortedImages[0] };
+    })
+    .sort((a, b) => {
+      const aIndex = PRIORITY_ORDER.indexOf(a.title);
+      const bIndex = PRIORITY_ORDER.indexOf(b.title);
+
+      if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
+      if (aIndex !== -1) return -1;
+      if (bIndex !== -1) return 1;
+      return a.title.localeCompare(b.title);
+    });
 }
 
 export const PROJECT_GALLERY = toProjectGalleryEntries();
 
 export const PROJECTS = PROJECT_GALLERY.map((project) => ({
   img: project.thumbnail,
+  thumbnail: project.thumbnail,
+  galleryImages: project.images,
+  images: project.images,
   title: project.title,
-  tag: "Complete Project",
+  tag: project.title === "The Court Heights" ? "Ongoing Project" : "Complete Projects",
   alt: `${project.title} project gallery`,
 }));
+
 
 export const HERO_BG_IMAGES = [
   "/hlb/dayany.webp",

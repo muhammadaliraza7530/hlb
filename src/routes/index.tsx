@@ -73,58 +73,37 @@ function Hero() {
       <motion.div aria-hidden
         className="pointer-events-none absolute -left-24 bottom-10 h-56 w-56 rounded-full bg-[oklch(0.58_0.14_248)]/10 blur-3xl"
         animate={{ x: mouse.x * 20, y: mouse.y * 20 }} transition={{ type: "spring", damping: 20 }} />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-        <motion.p
-          initial={{ opacity: 0, letterSpacing: "0.1em" }}
-          animate={{ opacity: 1, letterSpacing: "0.5em" }}
-          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-5 text-center text-[10px] font-bold uppercase text-[oklch(0.72_0.12_245)]/90 sm:mb-6 sm:text-xs"
+      <div className="relative mx-auto flex min-h-[calc(100vh-8rem)] max-w-7xl flex-col items-center justify-center px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, filter: "blur(12px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="relative w-full px-4 text-center"
         >
-          — Welcome to HLB Constructors —
-        </motion.p>
-        <div className="relative overflow-hidden py-1">
-          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-1/2 z-0 flex -translate-y-1/2 justify-center">
-            <img
-              src={HLB.logo}
-              alt=""
-              className="h-[clamp(10rem,28vw,18rem)] w-auto object-contain opacity-[0.08] sm:h-[15rem] md:h-[18rem]"
-              draggable={false}
-            />
-          </div>
-          <motion.h1
-            initial={{ opacity: 0, x: -120, filter: "blur(14px)" }}
-            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-            className="relative z-10 text-center font-display font-black leading-[0.9] tracking-tight text-[clamp(3.4rem,15vw,12rem)]"
-          >
-            <span className="hk-title-shimmer">HLB</span>
-          </motion.h1>
-          <motion.div
-            initial={{ opacity: 0, x: 120, filter: "blur(14px)" }}
-            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
-            className="relative z-10 mt-3 text-center font-display font-semibold leading-[0.95] tracking-[0.22em] text-white/85 text-[clamp(0.9rem,3.6vw,2.4rem)]"
-          >
-            Constructors
-          </motion.div>        
-        </div>  
-        <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-[oklch(0.72_0.12_245)] to-transparent" />
-        <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-relaxed text-white/70 sm:text-base md:text-lg">
-          High Land Builders &amp; Constructors — established in 1985 by
-          Tanveer Ishtiaq Khan. Over three decades of trusted civil works,
-          turnkey execution and construction management across Pakistan.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:mt-10">
+          <div aria-hidden className="pointer-events-none absolute inset-0 rounded-full bg-[oklch(0.58_0.14_248)]/10 blur-3xl" />
+          <img
+            src={HLB.logo}
+            alt={HLB.brand}
+            className="relative z-10 mx-auto w-[clamp(16rem,78vw,34rem)] max-w-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+            draggable={false}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+        >
           <Link to="/projects"
-            className="rounded-full bg-[oklch(0.58_0.14_248)] px-7 py-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.98_0.005_250)]">
+            className="rounded-full bg-[oklch(0.58_0.14_248)] px-7 py-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[oklch(0.98_0.005_250)] transition-transform duration-300 hover:scale-105">
             View Our Work
           </Link>
           <Link to="/contact"
-            className="rounded-full border border-white/20 px-7 py-3 text-[11px] font-bold uppercase tracking-[0.3em] text-white/80 hover:border-[oklch(0.58_0.14_248)] hover:text-[oklch(0.72_0.12_245)]">
+            className="rounded-full border border-white/20 px-7 py-3 text-[11px] font-bold uppercase tracking-[0.3em] text-white/80 transition-all duration-300 hover:border-[oklch(0.58_0.14_248)] hover:text-[oklch(0.72_0.12_245)]">
             Start a Project
           </Link>
-        </div>
-        <div className="mt-8 sm:mt-10 md:mt-14">
+        </motion.div>
+        <div className="mt-10 w-full sm:mt-14">
           <HeroCarousel />
         </div>
       </div>
