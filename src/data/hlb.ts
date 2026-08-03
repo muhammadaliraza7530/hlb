@@ -162,7 +162,7 @@ export const PHILOSOPHY = {
   vision:
     "To achieve excellence in construction engineering, execution and management by providing high-quality services on time.",
   mission:
-    "To continue towards the betterment of Construction Industry of Pakistan by improving the technical concept of civil engineering and participating in Mega projects that are equally beneficial for our nation as well as help in increasing the overall economy of Pakistan.",
+    "To continue towards the betterment of construction industry of Pakistan by improving the technical concept of civil engineering and participating in mega projects that are equally beneficial for our nation as well as help in increasing the overall economy of Pakistan.",
   values:
     "We are committed to maintain the greatest level of professionalism, ethics, innovation, a positive outlook, and execution that meets and exceeds expectations, all while providing timely and long-lasting solutions that stand the test of time.",
 };
